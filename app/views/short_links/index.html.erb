@@ -1,0 +1,17 @@
+<div class="hero bg-base-200">
+  <div class="hero-content text-center">
+
+  <h1 class="text-5xl font-bold">Short links</h1>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="short_link_form">
+  <%= render "form", short_link: @short_link %>
+</div>
+
+<ul class="list bg-base-200 rounded-box shadow-md">
+  <%= render @short_links %>
+</ul>

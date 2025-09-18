@@ -1,0 +1,8 @@
+
+<li class="list-row">
+    <div class="md:min-w-md"><%= short_link.original_url %></div>
+    <div><%= short_link.shortcode %></div>
+  <div>
+    <%= button_to "Delete", short_link, class: "btn btn-warning btn-xs", method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+  </div>
+</li>

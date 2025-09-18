@@ -23,6 +23,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container mx-auto px-5">
+
+      <%= render "shared/navbar" %>
+
+      <div id="flash_messages"></div>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
