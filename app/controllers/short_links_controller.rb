@@ -19,6 +19,12 @@ class ShortLinksController < ApplicationController
     end
   end
 
+  def destroy
+    @short_link = ShortLink.find(params[:id])
+    @short_link.destroy!
+    head :no_content
+  end
+
 
   private
 
