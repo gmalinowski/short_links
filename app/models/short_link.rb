@@ -4,6 +4,10 @@ class ShortLink < ApplicationRecord
 
   after_create :set_shortcode
 
+  after_create_commit -> { broadcast_prepend_later_to "short_links" }
+  after_update_commit -> { broadcast_prepend_later_to "short_links" }
+  after_destroy_commit -> { broadcast_remove_to "short_links" }
+
   private
 
   def set_shortcode

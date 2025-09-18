@@ -4,6 +4,13 @@
 @source "../../../app/javascript/**/*.js";
 @source "../../../app/views/**/*";
 
+@layer utilities {
+    .alert-info    { @apply alert-info; }
+    .alert-success { @apply alert-success; }
+    .alert-warning { @apply alert-warning; }
+    .alert-error   { @apply alert-error; }
+}
+
 @plugin "./daisyui.js";
 
 /* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
