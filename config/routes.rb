@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :short_links, only: [:create, :index, :show, :destroy]
+  resources :short_links, only: [:create, :index, :destroy]
+
+  get "/v/:short_code", to: "short_links#redirect", as: :short_viewer
 
   root "short_links#index"
 

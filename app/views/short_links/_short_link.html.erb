@@ -1,8 +1,11 @@
-
-<li class="list-row" id="<%= dom_id(short_link) %>">
-    <div class="md:min-w-md"><%= short_link.original_url %></div>
-    <div><%= short_link.shortcode %></div>
+<li class="list-row bg-gray-50" id="<%= dom_id(short_link) %>" data-controller="fade">
+  <div class="md:min-w-md"><%= short_link.original_url %></div>
+  <div><%= link_to "#{short_link.shortcode} (#{short_link.link_clicks.size})",
+                   short_viewer_path(short_link.shortcode),
+                   target: "_blank",
+                   data: { turbo: false } %></div>
   <div>
-    <%= button_to "Delete", short_link, class: "btn btn-warning btn-xs", method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+    <%= button_to "Delete", short_link, class: "btn btn-warning btn-xs",
+                  method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>
 </li>

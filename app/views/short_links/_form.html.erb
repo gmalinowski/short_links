@@ -11,12 +11,12 @@
 
   </div>
   <%= form_with model: short_link do |f| %>
-    <div class="form-control">
-      <%= f.label :original_url, class: "input" do %>
+    <div class="form-control w-full py-2">
+      <%= f.label :original_url, class: "input input-sm" do %>
         <%= f.url_field :original_url, required: false %>
       <% end %>
 
-      <%= f.submit "Shorten", class: "btn btn-success" %>
+      <%= f.submit "Shorten", class: "btn btn-success btn-sm" %>
     </div>
   <% end %>
 <% end %>
