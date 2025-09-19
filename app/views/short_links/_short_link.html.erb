@@ -5,7 +5,7 @@
                    target: "_blank",
                    data: { turbo: false } do %>
       <%= short_link.shortcode %>
-      <%= render partial: "link_count", locals: { short_link: short_link } %>
+      <%= render partial: "short_links/link_count", locals: { short_link: short_link } %>
     <% end %>
   </div>
   <div>
