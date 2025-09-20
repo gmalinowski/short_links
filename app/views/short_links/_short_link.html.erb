@@ -9,6 +9,9 @@
     <% end %>
   </div>
   <div>
+    <%= link_to "Stats", short_link_stats_path(short_link), class: "btn btn-info btn-xs" %>
+  </div>
+  <div>
     <%= button_to "Delete", short_link, class: "btn btn-warning btn-xs",
                   method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>

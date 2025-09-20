@@ -2,6 +2,11 @@
   <div class="flex-1">
     <%= link_to "ShortLinks", root_path, class: "btn btn-ghost text-xl"  %>
   </div>
+  <div>
+    <% if cookies[:time_zone] %>
+      <p>Strefa czasowa: <%= cookies[:time_zone] %></p>
+    <% end %>
+  </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li><%= link_to "Home", root_path %></li>

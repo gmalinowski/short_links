@@ -1,0 +1,30 @@
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Client Agent</th>
+      <th>Date</th>
+      <th>When?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% link_clicks.each do |click| %>
+      <tr class="hover:bg-gray-100">
+        <td><%= click.id %></td>
+        <td class="max-w-sm">
+          <div class="collapse collapse-arrow bg-base-100 border-base-300 border">
+            <input type="checkbox">
+            <div class="collapse-title font-semibold"><%= click.user_agent[..30]... %></div>
+            <div class="collapse-content text-sm">
+              <%= click.user_agent %>
+            </div>
+          </div>
+        </td>
+        <td><%= click.created_at %></td>
+        <td><%= time_ago_in_words(click.created_at.in_time_zone) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

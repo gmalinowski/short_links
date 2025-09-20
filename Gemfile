@@ -67,3 +67,7 @@ gem "base62", "~> 1.0"
 gem "tailwindcss-ruby", "~> 4.1"
 
 gem "tailwindcss-rails", "~> 4.3"
+
+gem "chartkick", "~> 5.2"
+
+gem "groupdate", "~> 6.7"
