@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_19_075106) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_20_080356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -31,5 +31,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_19_075106) do
     t.index ["shortcode"], name: "index_short_links_on_shortcode", unique: true
   end
 
-  add_foreign_key "link_clicks", "short_links"
+  add_foreign_key "link_clicks", "short_links", on_delete: :cascade
 end

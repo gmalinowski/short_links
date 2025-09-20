@@ -1,5 +1,5 @@
 class ShortLink < ApplicationRecord
-  has_many :link_clicks
+  has_many :link_clicks, dependent: :destroy
 
   validates :original_url, presence: true, uniqueness: true
   validates :shortcode, presence: false, uniqueness: true
