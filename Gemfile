@@ -71,3 +71,5 @@ gem "tailwindcss-rails", "~> 4.3"
 gem "chartkick", "~> 5.2"
 
 gem "groupdate", "~> 6.7"
+
+gem "link_thumbnailer", "~> 3.4"

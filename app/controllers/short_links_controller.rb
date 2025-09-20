@@ -3,6 +3,8 @@ class ShortLinksController < ApplicationController
 
   def index
     @short_link = ShortLink.new
+
+    @short_links.each(&:enqueue_preview_job_if_stale)
   end
 
   def redirect
@@ -16,6 +18,7 @@ class ShortLinksController < ApplicationController
   def create
     @short_link = ShortLink.new(short_link_params)
     if @short_link.save
+      GenerateLinkPreviewJob.perform_later(@short_link.id)
       render turbo_stream: [
         turbo_stream.prepend("flash_messages", partial: "shared/alert", locals: {
           message: "Short link created.",

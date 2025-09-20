@@ -1,0 +1,11 @@
+
+<div class="card h-32 max-w-128 card-side card-xs bg-base-100 shadow-sm">
+  <div id="short_link_preview_image_link_preview_id_<%= short_link&.link_preview&.id %>">
+  <%= render partial: "shared/link_preview_image",
+             locals: { link_preview_images: short_link&.link_preview&.link_preview_images } %>
+  </div>
+  <div class="card-body overflow-hidden">
+    <h3 class="card-title"><%= short_link&.link_preview&.title %></h3>
+    <p><%= short_link&.link_preview&.description %></p>
+  </div>
+</div>
