@@ -3,6 +3,9 @@
     <%= render partial: "shared/link_preview", locals: { short_link: short_link } %>
   </div>
   <div class=""><%= short_link.original_url %></div>
+  <div>
+    <%= render partial: "shared/copy_button", locals: { short_link: short_link } %>
+  </div>
   <div class="">
     [ <%= link_to short_viewer_path(short_link.shortcode),
                    target: "_blank",

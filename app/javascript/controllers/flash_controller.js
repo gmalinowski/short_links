@@ -4,6 +4,11 @@ import { gsap } from "gsap"
 export default class extends Controller {
     connect() {
 
+
+        this.animate()
+    }
+
+    animate() {
         gsap.to(this.element, {
             opacity: 0,
             duration: 1,   // fade out

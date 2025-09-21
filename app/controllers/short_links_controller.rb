@@ -43,7 +43,15 @@ class ShortLinksController < ApplicationController
   private
 
   def set_short_links
-    @short_links = ShortLink.includes(:link_clicks).order(created_at: :desc)
+    short_links_arel = ShortLink.arel_table
+    link_clicks_arel = LinkClick.arel_table
+
+    @short_links = ShortLink
+                     .left_joins(:link_clicks)
+                     .group(short_links_arel[:id])
+                     .order(link_clicks_arel[:id].count.desc)
+                     .order(short_links_arel[:updated_at].desc)
+
   end
 
   def short_link_params
